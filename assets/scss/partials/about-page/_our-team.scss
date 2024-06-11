@@ -1,0 +1,88 @@
+.our-team {
+    padding: 50px 0;
+    .inner {
+        max-width: 870px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .team-cards {
+        margin-top: 20px;
+
+        .card {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #000;
+            background: #FCFEFF;
+            height: 100%;
+
+            img {
+                max-height: 255px;
+                min-height: 255px;
+                object-fit: cover;
+                width: 100%;
+                border-radius: 5px;
+
+                @include media-breakpoint-down(sm) {
+                    max-height: 480px;
+                }
+            }
+
+            .content {
+                text-align: center;
+                padding: 16px;
+
+                h3 {
+                    @include global-font;
+                    @include font-format(18px, 1.2);
+                    color: #282828;
+                    font-weight: 600;
+
+                    @include media-breakpoint-down(md) {
+                        @include font-format(16px, 1.2);
+                    }
+
+                    @include media-breakpoint-down(sm) {
+                        @include font-format(14px, 1.2);
+                    }
+                }
+                h6 {
+                    @include global-font;
+                    @include font-format(13px, 1.2);
+                    color: #3E3E59;
+                    font-weight: 500;
+                    margin: 3px 0 10px 0;
+
+                    @include media-breakpoint-down(sm) {
+                        @include font-format(12px, 1.2);
+                    }
+                }
+                p {
+                    @include global-font;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 4;
+                    overflow: hidden;
+                    text-align: center;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 1.2;
+                    margin: 0 0 5px 0;
+                }
+
+                .btn {
+                    color: $brand-primary;
+                    font-weight: 500;
+
+                    @include media-breakpoint-down(md) {
+                        @include font-format(14px, 1.2);
+                    }
+
+                    &:hover {
+                        color: $brand-secondary;
+                    }
+                }
+            }
+        }
+    }
+}

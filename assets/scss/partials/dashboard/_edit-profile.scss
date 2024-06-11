@@ -1,0 +1,176 @@
+.edit-profile {
+    padding: 30px 0 50px 0;
+
+    .personal-info-wrapper {
+        max-width: 800px;
+        width: 100%;
+        margin: 0 auto;
+
+        .edit-profile-pic {
+            position: relative;
+            display: inline-flex;
+            margin-bottom: 20px;
+
+
+            .user-profile-pic {
+                width: 100px;
+                height: 100px;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+
+            .input-group {
+                position: absolute;
+                bottom: -25%;
+                right: -80%;
+            }
+
+            input {
+                opacity: 0;
+                width: 0;
+                max-width: 0;
+            }
+
+            label {
+                width: 25px;
+                height: 25px;
+                border-radius: 50% !important;
+                background-color: $brand-primary;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                i {
+                    font-size: 12px;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    form {
+
+        h3 {
+            @include global-font;
+            @include font-format(22px, 1.2);
+            color: #343832;
+            font-weight: 700;
+            letter-spacing: 0.705px;
+            text-transform: capitalize;
+            margin-bottom: 20px;
+
+            @include media-breakpoint-down(md) {
+                @include font-format(20px, 1.2);
+            }
+
+            @include media-breakpoint-down(sm) {
+                @include font-format(18px, 1.2);
+            }
+        }
+
+        label {
+            @include global-font;
+            @include font-format(16px, 1.2);
+            color: rgba(0, 0, 0, 0.90);
+
+            @include media-breakpoint-down(md) {
+                @include font-format(14px, 1.2);
+            }
+
+            span {
+                color: #CD4443;
+            }
+        }
+
+        input,
+        select {
+            @include global-font;
+            @include font-format(16px, 1.2);
+            color: rgba(0, 0, 0, 0.90);
+            min-height: 45px;
+
+            @include media-breakpoint-down(md) {
+                @include font-format(14px, 1.2);
+            }
+
+            &::placeholder {
+                color: rgba(16, 32, 51, 0.66);
+            }
+
+            &:focus {
+                box-shadow: none;
+                border-color: $brand-primary;
+            }
+        }
+
+
+        .check-wrapper {
+
+            label {
+                @include global-font;
+                @include font-format(16px, 1.2);
+                color: #6E7485;
+
+                @include media-breakpoint-down(md) {
+                    @include font-format(14px, 1.2);
+                }
+
+            }
+
+            input {
+                min-height: auto;
+
+                &:checked {
+                    background-color: $brand-primary;
+                    border-color: $brand-primary;
+                }
+            }
+
+            &:has(input:checked) {
+
+                label {
+                    color: #1D2026;
+                }
+            }
+        }
+
+        .input-group:has(.password-show) {
+            position: relative;
+
+            input {
+                position: relative;
+                z-index: 1;
+            }
+        }
+
+        .password-show {
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+            z-index: 3;
+
+            i {
+                font-size: 14px;
+                color: $brand-primary;
+            }
+
+        }
+
+        .forgot-password {
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            gap: 15px;
+            margin-bottom: 30px;
+
+            a {
+                @include global-font;
+                @include font-format(12px, 1.2);
+                color: $brand-primary;
+                font-weight: 500;
+                letter-spacing: -0.084px;
+            }
+        }
+    }
+}

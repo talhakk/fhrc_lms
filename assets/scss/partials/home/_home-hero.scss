@@ -1,0 +1,68 @@
+.hero {
+    @include cover-overlay($fill-grey-dark, 0.6);
+    min-height: 480px;
+    padding: 80px 0;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left top;
+
+    @include media-breakpoint-up(sm) {
+        min-height: 659px;
+    }
+
+    .inner {
+        position: relative;
+        z-index: 1;
+    }
+    
+    &__text {
+        color: #fff;
+
+        h1 {
+            max-width: 650px;
+            width: 100%;
+            margin-bottom: 15px;
+            text-shadow: rgba(0, 0, 0, 0.325) 0px 1.8px 7.65px;
+
+            @include media-breakpoint-up(md) {
+                margin-bottom: 30px;
+            }
+
+            i {
+                color: $brand-secondary;
+            }
+        }
+
+        .description {
+            @include font-format(14pt);
+            margin-bottom: 30px;
+            text-shadow: rgba(0, 0, 0, 0.6) 0px 0.999994px 7.49995px;
+
+            @include media-breakpoint-up(md) {
+                @include font-format(16pt);
+                margin-bottom: 51px
+            }
+            @include media-breakpoint-up(lg) {
+                @include font-format(18pt);
+            }
+            @include media-breakpoint-up(xl) {
+                @include font-format(20pt);
+            }
+        }
+
+        .btn {
+            max-width: max-content;
+            width: 100%;
+            @include font-format(12pt);
+            @include media-breakpoint-up(sm) {
+                max-width: 300px;
+                @include font-format(15pt);
+            }
+            @include media-breakpoint-up(md) {
+                @include font-format(15pt);
+            }
+        }
+    }
+}

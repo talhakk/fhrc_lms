@@ -1,0 +1,50 @@
+.about__banner {
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+
+    @include media-breakpoint-up(md) {
+        min-height: 786px;
+    }
+
+    &--bg {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        filter: grayscale(1);
+    }
+
+    .inner {
+        position: relative;
+        z-index: 1;
+    }
+
+    h2 {
+        @include font-format(25pt);
+        max-width: 570px;
+        width: 100%;
+        margin: 0 auto;
+        color: #fff;
+        filter: drop-shadow(rgba(255, 242, 242, 0.95) 0px 0px 0.7935px) drop-shadow(rgba(255, 255, 255, 0.75) 0px 0px 3.9675px) drop-shadow(rgba(255, 255, 255, 0.44) 0px 0px 11.9025px);
+        
+        @include media-breakpoint-up(md) {
+            @include font-format(28pt);
+        }
+
+        @include media-breakpoint-up(lg) {
+            @include font-format(32pt);
+        }
+
+        @include media-breakpoint-up(xl) {
+            @include font-format(36pt);
+        }
+    }
+}

@@ -1,0 +1,115 @@
+.video__gallery {
+    background-color: $fill-grey-dark;
+    padding: 50px 0 0;
+
+    @include media-breakpoint-up(lg){
+        padding: 70px 0 0;
+    }
+
+    @include media-breakpoint-up(xl){
+        padding: 100px 0 0;
+    }
+
+    .sec__head {
+        @include section-head-grouped(#fff, $fill-grey-light, #fff);
+        margin-bottom: 40px;
+
+        @include media-breakpoint-up(md) {
+            margin-bottom: 79px;
+        }
+    }
+
+    &--slider {
+
+        .slide__thumbnail {
+            border-radius: 27px;
+            overflow: hidden;
+            max-width: 570px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 30px;
+            transition: 0.3s all ease;
+
+            @include media-breakpoint-up(md) {
+                transform: scale(1);
+                padding: 0 0;
+                max-width: 100%;
+            }
+
+            p {
+                margin-bottom: 0;
+            }
+            
+            img, iframe {
+                width: 100%;
+                height: 180px;
+                border-radius: 27px;
+                object-fit: cover;
+
+                @include media-breakpoint-up-custom(390px) {
+                    height: 210px;
+                }
+
+                @include media-breakpoint-up-custom(430px) {
+                    height: 240px;
+                }
+
+                @include media-breakpoint-up-custom(480px) {
+                    height: 270px;
+                }
+
+                @include media-breakpoint-up(sm) {
+                    height: 287px;
+                }
+
+                @include media-breakpoint-up(lg) {
+                    height: 310px;
+                }
+
+                @include media-breakpoint-up(xl) {
+                    height: 350px;
+                }
+
+                @include media-breakpoint-up(xxl) {
+                    height: 400px;
+                }
+
+                @include media-breakpoint-up-custom(1600px) {
+                    height: 430px;
+                }
+
+                @include media-breakpoint-up-custom(1720px) {
+                    height: 470px;
+                }
+
+                @include media-breakpoint-up-custom(1720px) {
+                    height: 500px;
+                }
+            }
+        }
+
+        .slide:not(.swiper-slide-active) {
+                
+            .slide__thumbnail {
+                pointer-events: none;
+
+                @include media-breakpoint-up(md) {
+                    transform: scale(0.8);
+                    opacity: 0.6;
+                }
+            }
+        }
+
+        .swiper__nav {
+            width: 100%;
+            max-width: 570px;
+            padding: 0 15px;
+
+            @include media-breakpoint-up(md) {
+                width: 59vw;
+                max-width: 100%;
+                padding: 0 0;
+            }
+        }
+    }
+}

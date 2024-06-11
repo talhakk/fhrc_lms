@@ -1,0 +1,43 @@
+.wish-list {
+
+    .featured-cards {
+
+        .swiper-wishlist-slider {
+            padding: 10px;
+        }
+
+        .featured-card {
+
+            .thumnail {
+                max-height: 180px;
+                min-height: 180px;
+            }
+
+            h6 {
+                @include font-format(12px, 1.2);
+            }
+
+            h5 {
+                @include font-format(12px, 1.2);
+                margin: 10px 0;
+            }
+
+            h3 {
+                @include font-format(14px, 1.2);
+                min-height: 33px;
+            }
+
+            p {
+                @include font-format(14px, 1.2);
+                min-height: 87px;
+            }
+
+            .post-details {
+
+                span {
+                    @include font-format(12px, 1.2);
+                }
+            }
+        }
+    }
+}

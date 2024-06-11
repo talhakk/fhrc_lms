@@ -1,0 +1,95 @@
+.support-submition-form {
+
+    .details {
+
+        label {
+            .wpcf7-form-control-wrap {
+                input {
+                    border: none;
+                    border-radius: 5px;
+                    padding: 0px 30px;
+                }
+            }
+        }
+
+
+        .note {
+            display: flex;
+            align-items: flex-start;
+            padding: 30px;
+            gap: 15px;
+            border-radius: 5px;
+            background: #ECECEC;
+
+            @include media-breakpoint-down(md) {
+                padding: 25px;
+            }
+
+            @include media-breakpoint-down(xs) {
+                padding: 20px;
+            }
+
+            i {
+                font-size: 30px;
+                color: #000;
+
+                @include media-breakpoint-down(xs) {
+                    @include font-format(28px, 1.2);
+                }
+            }
+
+            span {
+                @include global-font;
+                @include font-format(15px, 1.2);
+                color: #616161;
+                font-weight: 400;
+
+                @include media-breakpoint-down(md) {
+                    @include font-format(14px, 1.2);
+                }
+
+                @include media-breakpoint-down(xs) {
+                    @include font-format(13px, 1.2);
+                }
+            }
+        }
+
+        .form-control {
+            @include global-font;
+            @include font-format(15px, 1.2);
+            color: #000;
+
+            @include media-breakpoint-down(sm) {
+                @include font-format(14px, 1.2);
+            }
+
+            &:focus {
+                box-shadow: none;
+                border-color: $brand-primary;
+            }
+        }
+
+        input {
+            min-height: 50px;
+
+            &.file-input {
+                opacity: 0;
+                min-height: auto;
+            }
+        }
+
+        .checked {
+            display: none;
+            color: $brand-primary;
+        }
+
+        textarea {
+            resize: none;
+            padding-top: 10px;
+        }
+    }
+}
+
+.support-submition-form .details .input-group label .checked.file-selected {
+    display: flex;
+}

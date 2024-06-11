@@ -1,0 +1,437 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    @include global-font;
+}
+
+a {
+    @include transition-standard;
+    color: $body-color;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        color: $link-hover;
+    }
+}
+
+i,
+em {
+    font-style: italic;
+}
+
+b,
+strong {
+    font-weight: $fw-bold;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+button {
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @include heading;
+}
+
+h1 {
+    @include h1;
+}
+
+h2 {
+    @include h2;
+}
+
+h3 {
+    @include h3;
+}
+
+h4,
+h5 {
+    @include h4;
+}
+
+.btn , .wp-block-button__link   {
+    @include btn;
+
+    &.link  {
+        background-color: transparent;
+        padding: 0;
+        min-height: auto;
+        color: $brand-secondary;
+
+        &:hover {
+            color: $btn-hover;
+        }
+    }
+}
+
+.btn-alerts {
+    @include transition-standard;
+    @include font-format(14px);
+    min-height: 42px !important;
+    font-family: $font-family-base !important;
+    font-weight: $fw-semi-bold !important;
+    font-size: 12px !important;
+    color: #fff !important;
+    text-transform: capitalize !important;
+    background-color: $brand-primary !important;
+    padding: 5px 15px !important;
+    box-sizing: border-box !important;
+    cursor: pointer !important;
+    outline: none !important;
+    border: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+    border-radius: 5px !important;
+
+    @include media-breakpoint-up-custom(992px) {
+        padding: 5px 30px !important;
+        @include font-format(14px);
+    }
+
+    &:hover {
+        color: #fff !important;
+        background-color: $btn-hover !important;
+        outline: none !important;
+        box-shadow: none !important;
+    }
+}
+
+.cta-link {
+    color: $link-color;
+    font-weight: $fw-semi-bold;
+
+    &:hover {
+        color: $link-hover;
+    }
+}
+
+// swiper nav__btn starts
+.swiper__nav {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.nav__btn {
+    position: static;
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $brand-primary;
+    border-radius: 50%;
+
+
+    @include media-breakpoint-up(md) {
+        width: 40px;
+        height: 40px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        width: 45px;
+        height: 45px;
+    }
+
+    &:after {
+        font-size: 20px !important;
+        font: var(--fa-font-solid);
+        color: #fff;
+
+        @include media-breakpoint-up(md) {
+            font-size: 30px !important;
+        }
+    }
+
+    &.swiper-button-prev {
+
+        &:after {
+            content: "\f104";
+        }
+    }
+
+    &.swiper-button-next {
+
+        &:after {
+            content: "\f105";
+        }
+    }
+}
+
+.head {
+
+    h2 {
+        @include global-font;
+        @include font-format(48px, 1.2);
+        color: #1E1E1E;
+        font-weight: 500;
+        letter-spacing: 2.4px;
+        text-transform: uppercase;
+        position: relative;
+        margin-bottom: 0;
+        width: 100%;
+
+        @include media-breakpoint-down(lg) {
+            @include font-format(44px, 1.2);
+        }
+
+        @include media-breakpoint-down(md) {
+            @include font-format(36px, 1.2);
+        }
+
+        @include media-breakpoint-down(sm) {
+            @include font-format(28px, 1.2);
+        }
+
+        &::before {
+            content: '';
+            height: 8px;
+            width: 90px;
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            background-color: $brand-secondary;
+
+            @include media-breakpoint-down(lg) {
+                height: 5px;
+            }
+
+            @include media-breakpoint-down(md) {
+                height: 3px;
+            }
+        }
+    }
+
+    &.no-border {
+
+        h2 {
+
+            &::before {
+                content: none;
+            }
+        }
+    }
+
+    h3 {
+        @include global-font;
+        @include font-format(18px, 1.2);
+        color: #104627;
+        font-weight: 500;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+
+        @include media-breakpoint-down(md) {
+            @include font-format(16px, 1.2);
+        }
+    }
+
+    p {
+        @include global-font;
+        @include font-format(20px, 1.2);
+        color: #000;
+        font-weight: 400;
+        margin-top: 10px;
+
+        @include media-breakpoint-down(lg) {
+            @include font-format(16px, 1.2);
+        }
+
+        @include media-breakpoint-down(md) {
+            @include font-format(14px, 1.2);
+        }
+    }
+
+    &.small {
+
+        h2 {
+            @include font-format(32px, 1.2);
+            color: #161616;
+            font-weight: 600;
+            text-transform: none;
+
+            @include media-breakpoint-down(lg) {
+                @include font-format(30px, 1.2);
+            }
+
+            @include media-breakpoint-down(md) {
+                @include font-format(28px, 1.2);
+            }
+
+            @include media-breakpoint-down(sm) {
+                @include font-format(26px, 1.2);
+            }
+
+            &::before {
+                content: none;
+            }
+        }
+    }
+}
+
+.container {
+    padding: 0 15px;
+}
+
+@media screen and (min-width:575px) {
+    .container , .tutor-container-lg, .tutor-container-md, .tutor-container-sm, .tutor-container ,.starter-courses .tutor-container-lg, .starter-courses  .tutor-container-md, .starter-courses  .tutor-container-sm, .starter-courses  .tutor-container  {
+        max-width: 1320px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .container {
+        padding: 0 20px;
+    }
+}
+
+.tutor-container-lg, .tutor-container-md, .tutor-container-sm, .tutor-container ,.starter-courses .tutor-container-lg, .starter-courses  .tutor-container-md, .starter-courses  .tutor-container-sm, .starter-courses  .tutor-container  {
+    padding: 0;
+}
+
+
+.modal {
+
+    .modal-content {
+
+        .modal-header {
+
+            h5 {
+                @include global-font;
+                @include font-format(16px, 1.2);
+                color: #1D2026;
+                font-weight: 600;
+                letter-spacing: -0.128px;
+                text-transform: capitalize;
+            }
+        }
+    }
+}
+
+/***Cart Css***/
+.wp-block-woocommerce-cart.alignwide , .wp-block-woocommerce-checkout.alignwide ,.woocommerce-order{
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+    margin-top: 50px;
+
+    h2.woocommerce-order-details__title , h2.woocommerce-column__title {
+        font-family: "Poppins", sans-serif;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 1.5;
+    }
+    ul.woocommerce-order-overview.woocommerce-thankyou-order-details {
+        padding-left: 0;
+    }
+    .wc-block-cart table.wc-block-cart-items, .wc-block-cart table.wc-block-cart-items td, .wc-block-cart table.wc-block-cart-items th {
+        margin: 0 0 0.5rem;
+
+        .wc-block-cart-item__remove-link  {
+            @include btn;
+            background-color: transparent;
+            padding: 0 !important;
+            min-height: auto;
+            color: $brand-secondary;
+            text-decoration: none;
+    
+            &:hover {
+                color: $btn-hover;
+                background-color: transparent;
+            }
+        }
+    }
+
+    .is-medium table.wc-block-cart-items .wc-block-cart-items__row .wc-block-cart-item__quantity {
+        padding-top: 0;
+        display: flex;
+    }
+
+    .wc-block-components-button {
+        @include btn;
+    }
+
+    .is-large .wc-block-components-sidebar .wc-block-components-panel, .is-large .wc-block-components-sidebar .wc-block-components-totals-coupon, .is-large .wc-block-components-sidebar .wc-block-components-totals-item {
+        padding: 0;
+    }
+}
+.wc-block-grid__products {
+    gap: 15px;
+    margin: 30px 0 !important;
+}
+.wc-block-grid__product {
+    border: none !important;
+    border-radius: 5px;
+    box-shadow: 0rem 0rem 0.4rem rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+
+    a {
+        width: 100%;
+    }
+
+    .wc-block-grid__product-image {
+        width: 100% !important;
+        
+        img {
+            width: 100% !important;
+        }
+    } 
+
+    .wp-block-button__link {
+        width: fit-content;
+    }
+}
+
+ins span.woocommerce-Price-amount.amount:has(bdi) {
+    font-size: 16px;
+    text-decoration: none;
+}
+del span.woocommerce-Price-amount.amount:has(bdi) {
+    font-size: 14px;
+    color: red;
+}
+
+.tutor-course-booking-availability {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    a {
+        width: 100%;
+    }
+}
+
+.tutor-tab .tooltip-wrap .tooltip-right {
+    top: 20px !important;
+    left: auto !important;
+    right: 0 !important;
+}
+/***Cart Css***/

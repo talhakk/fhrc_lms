@@ -1,0 +1,152 @@
+<?php 
+    $ttb_heading = get_field( 'ttb_heading' );
+    $ttb_sub_heading = get_field( 'ttb_sub_heading' );
+    $query_parameter = get_field( 'query_parameter' );
+    $number_of_cards_in_row = get_field( 'number_of_cards_in_row' );
+
+    switch ($number_of_cards_in_row) {
+        case '1':
+            $col = '12';
+            break;
+        case '2':
+            $col = '6';
+            break;
+        case '3':
+            $col = '4';
+            break;
+        case '4':
+            $col = '3';
+            break;
+        
+        default:
+            $col = '4';
+            break;
+    }
+    
+    $taxonomy = (isset($query_parameter['tax_query'][0]['taxonomy'])?$query_parameter['tax_query'][0]['taxonomy']:'');
+    $field = (isset($query_parameter['tax_query'][0]['field'])?$query_parameter['tax_query'][0]['field']:'');
+    $terms = (isset($query_parameter['tax_query'][0]['terms'])?$query_parameter['tax_query'][0]['terms']:'');
+?>
+<section class="our-team">
+    <div class="container">
+        <div class="inner">
+            <div class="head text-center no-border">
+                <h2 class="mb-2"><?php echo (isset($ttb_heading)?$ttb_heading:'');?></h2>
+                <h3><?php echo (isset($ttb_sub_heading)?$ttb_sub_heading:'');?></h3>
+            </div>
+            <div class="team-cards row gy-4">
+                <?php
+                    // $args_tt = build_custom_query($post_type, $length, $start, $search, $taxonomy, $field, $term, $OrderBy, $OrderQuerry, $post_status);
+                    $args_tt = build_custom_query('training-team', 
+                        $query_parameter['query_limit'], 
+                        $query_parameter['query_offset'], 
+                        $query_parameter['search_argument'], 
+                        $taxonomy, 
+                        $field, 
+                        $terms, 
+                        $query_parameter['query_order_by'], 
+                        $query_parameter['order_sort'],  
+                        $query_parameter['post_status']);
+                    $query_tt = new WP_Query($args_tt);
+                    $total_records = $query_tt->found_posts;
+                    if ($query_tt->have_posts()) {
+                        while ($query_tt->have_posts()) {
+                            $query_tt->the_post();
+                            $post_id = get_the_ID();
+                            $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post_id), 'full' );
+                    ?>
+                        <div class="col-lg-<?php echo $col;?>">
+                            <div class="card">
+                                <?php if (!empty($backgroundImg)) : ?>
+                                    <a href="<?php the_permalink();?>"><img src="<?php echo esc_url($backgroundImg[0]);?>" alt="">
+                                    </a>
+                                <?php endif; ?>
+                                <div class="content">
+                                    <h3><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h3>
+                                    <h6><?php echo get_field('team_member_designation'); ?></h6>
+                                    <?php the_content(); ?>
+                                    <a href="<?php echo get_permalink();?>" class="btn link read_more_desc_link" id="">Show more</a>
+                                </div>
+                            </div>
+                        </div>
+                    <?php 
+                        }
+                        wp_reset_postdata();
+                    }
+                ?>
+                <!-- <div class="col-lg-4">
+                    <div class="card">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/joyce.png'); ?>" alt="">
+                        <div class="content">
+                            <h3>Autumn green</h3>
+                            <h6>Behavior Health Trainer</h6>
+                            <p>My name is Autumn Green and I
+                                am Behavior Health Trainer.</p>
+                            <a href="" class="btn link">Show more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/joyce.png'); ?>" alt="">
+                        <div class="content">
+                            <h3>Autumn green</h3>
+                            <h6>Behavior Health Trainer</h6>
+                            <p>My name is Autumn Green and I
+                                am Behavior Health Trainer.</p>
+                            <a href="" class="btn link">Show more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/joyce.png'); ?>" alt="">
+                        <div class="content">
+                            <h3>Autumn green</h3>
+                            <h6>Behavior Health Trainer</h6>
+                            <p>My name is Autumn Green and I
+                                am Behavior Health Trainer.</p>
+                            <a href="" class="btn link">Show more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/heather.png'); ?>" alt="">
+                        <div class="content">
+                            <h3>Autumn green</h3>
+                            <h6>Behavior Health Trainer</h6>
+                            <p>My name is Autumn Green and I
+                                am Behavior Health Trainer.</p>
+                            <a href="" class="btn link">Show more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/heather.png'); ?>" alt="">
+                        <div class="content">
+                            <h3>Autumn green</h3>
+                            <h6>Behavior Health Trainer</h6>
+                            <p>My name is Autumn Green and I
+                                am Behavior Health Trainer.</p>
+                            <a href="" class="btn link">Show more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/heather.png'); ?>" alt="">
+                        <div class="content">
+                            <h3>Autumn green</h3>
+                            <h6>Behavior Health Trainer</h6>
+                            <p>My name is Autumn Green and I
+                                am Behavior Health Trainer.</p>
+                            <a href="" class="btn link">Show more</a>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</section>

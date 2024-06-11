@@ -1,0 +1,215 @@
+.enrolled-students {
+    padding: 50px 0;
+
+    .dashboard-h2 {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .filters-wrapper {
+            gap: 30px;
+        }
+
+        h2 {
+            @include font-format(22px, 1.2);
+            letter-spacing: -0.219px;
+        }
+
+        .filters-btns {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 10px;
+
+            .bordered-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 5px 15px;
+                border: 1px solid #2D2F31;
+                height: 100%;
+
+                @include media-breakpoint-down(lg) {
+                    padding: 8px 10px;
+                }
+
+                &:has(.sort-by) {
+                    justify-content: flex-start;
+                }
+
+                a,
+                select {
+                    @include global-font;
+                    @include font-format(15px, 1.2);
+                    color: #2D2F31;
+                    font-weight: 400;
+                }
+
+                a {
+                    font-weight: 500;
+                }
+
+                p {
+                    @include global-font;
+                    @include font-format(12px, 1.2);
+                    font-weight: 500;
+                    color: #2D2F31;
+                    margin: 0;
+                }
+
+                .sort-by {
+                    width: 100%;
+                }
+
+                select {
+                    width: 100%;
+                    border: none;
+                    text-transform: capitalize;
+
+                    &:focus-visible {
+                        border: none;
+                        outline: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .students-table {
+        padding-top: 30px;
+
+
+        .action-wrapper {
+
+            button {
+                @include global-font;
+                @include font-format(16px, 1.2);
+                font-weight: 800;
+            }
+
+            .dropdown-menu {
+
+                &.show {
+                    transform: translate(-40%, 26px) !important;
+                    min-width: 5rem !important;
+                }
+
+                li {
+
+                    a {
+                        @include global-font;
+                        @include font-format(12px, 1.2);
+                    }
+                }
+            }
+        }
+
+        thead {
+
+            tr {
+
+                th {
+                    text-align: center;
+                    @include global-font;
+                    @include font-format(14px, 1.2);
+                    color: #000;
+                    font-weight: 500;
+                    border-bottom: 1px solid #e1e1e1 !important;
+
+                    &:first-child {
+                        padding: 10px !important;
+
+                        &.sorting {
+
+                            &::after {
+                                content: none !important;
+                            }
+
+                            &::before {
+                                content: none !important;
+                            }
+
+                            cursor: auto !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        tbody {
+
+            td {
+                text-align: center;
+                @include global-font;
+                @include font-format(14px, 1.2);
+                color: #000;
+                font-weight: 400;
+                border-bottom: 1px solid #e1e1e1;
+                padding: 5px 10px;
+
+                img {
+                    display: flex;
+                    max-width: 40px;
+                    width: 100%;
+                    height: 40px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                    border: 1px solid #fff;
+                    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.10);
+                    margin: 0 auto;
+                }
+
+                position: relative;
+
+                &.dtr-control:before {
+
+                    margin: 0 !important;
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+
+            tr {
+
+                &:last-child {
+
+                    td {
+                        border: none !important;
+                    }
+                }
+            }
+        }
+
+        table {
+            width: 100% !important;
+
+            input {
+
+                &.regular-checkbox {
+
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+
+            &.collapsed {
+
+                tr {
+
+                    td {
+
+                        &:first-child {
+                        
+                            &.dtr-control {
+                                text-align: right !important;
+                                padding-right: 0 !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

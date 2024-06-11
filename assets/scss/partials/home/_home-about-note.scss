@@ -1,0 +1,12 @@
+.about__note {
+    background-color: $fill-grey-dark;
+    padding: 50px 0 30px;
+
+    @include media-breakpoint-up(md) {
+        padding: 69px 0 64px;
+    }
+
+    .sec__head {
+        @include section-head-grouped(#fff, $fill-grey-light, $fill-grey-light);
+    }
+}

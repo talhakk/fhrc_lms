@@ -1,0 +1,131 @@
+.course-video {
+    padding: 0 0 80px 0;
+
+    @include media-breakpoint-down(md) {
+        padding-bottom: 50px;
+    }
+    .video-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 960px;
+        width: 100%;
+        margin: 0 auto;
+
+        video {
+            width: 100%;
+            height: 100%;
+        }
+
+        .video-js {
+            width: 100%;
+            max-height: 535px;
+
+            .vjs-big-play-button {
+                top: 50%;
+                transform: translate(-50%, -50%);
+                left: 50%;
+            }
+        }
+
+        .vjs-poster {
+            background-size: cover;
+        }
+
+        .video-details {
+            margin-top: 15px;
+            width: 100%;
+
+            .head {
+
+                h2 {
+                    @include font-format(24px, 1.2);
+                    letter-spacing: -0.249px;
+                }
+            }
+
+            .details {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                margin-top: 15px;
+
+                @include media-breakpoint-down(sm) {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 10px;
+                }
+
+                .students {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    gap: 15px;
+
+                    ul {
+                        display: flex;
+                        list-style: none;
+                        align-items: center;
+                        padding: 0;
+                        margin: 0;
+
+                        li {
+                            width: 30px;
+                            height: 30px;
+                            display: flex;
+
+                            &:not(:first-child) {
+                                margin-left: -10px;
+                            }
+
+                            img {
+                                width: 100%;
+                                object-fit: cover;
+                                border-radius: 50%;
+                                border: 1px solid #fff;
+                            }
+                        }
+                    }
+
+                    .numbers {
+
+                        h3 {
+                            @include global-font;
+                            @include font-format(12px, 1.2);
+                            color: #1D2026;
+                            font-weight: 600;
+                            letter-spacing: -0.109px;
+                        }
+
+                        p {
+                            @include global-font;
+                            @include font-format(10px, 1.2);
+                            color:  #6E7485;
+                            margin: 0;
+                        }
+                        
+                    }
+                }
+
+                .comments {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+
+                    span {
+                        @include global-font;
+                        @include font-format(12px, 1.2);
+                        color:  #6E7485;/* 157.143% */
+                        letter-spacing: -0.109px;
+
+                        strong {
+                            color: #1D2026;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

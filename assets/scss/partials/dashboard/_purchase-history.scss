@@ -1,0 +1,279 @@
+.purchase-history {
+    padding: 30px 0 50px 0;
+
+    .dashboard-h2 {
+        margin-bottom: 20px;
+
+        h2 {
+            @include font-format(22px, 1.2);
+            letter-spacing: -0.219px;
+        }
+    }
+
+    .history-wrapper {
+        padding: 20px 0;
+
+        @include media-breakpoint-down(md) {
+            padding-bottom: 0;
+        }
+
+        .accordion-item {
+            border-color: #dbdbdb;
+            border-width: 1.2px;
+            border: 1.2px solid #dbdbdb !important;
+            margin-bottom: 20px;
+
+            @include media-breakpoint-down(xs) {
+                margin-bottom: 15px;
+            }
+
+            .accordion-button {
+                border: none;
+                border-color: transparent;
+                background-color: transparent;
+                @include global-font;
+                @include font-format(12px, 1.2);
+                color: #1D2026;
+                font-weight: 600;
+                padding: 16px 40px 16px 16px;
+                display: flex;
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 10px;
+
+                @include media-breakpoint-down(sm) {
+                    flex-direction: column;
+                }
+
+                &::after {
+                    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7' fill='none'%3e%3cpath d='M10.8314 6.2085L5.97517 1.35222L1.1189 6.2085' stroke='%236E7485' stroke-width='1.24876' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+                    transform: rotate(-180deg) translateY(50%);
+                    right: 16px;
+                    position: absolute;
+                    top: 50%;
+                    width: 1rem;
+                    height: 10px;
+                    background-size: contain;
+                }
+
+                &:not(.collapsed) {
+                    box-shadow: none;
+                    background-color: transparent;
+                    color: #FF6636;
+
+                    border-bottom: 1.2px solid #dbdbdb !important;
+
+                    &::after {
+                        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7' fill='none'%3e%3cpath d='M10.8314 6.2085L5.97517 1.35222L1.1189 6.2085' stroke='%23FF6636' stroke-width='1.24876' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+                        transform: rotate(-360deg) translateY(-50%);
+                    }
+                }
+
+                &:focus {
+                    box-shadow: none;
+                    border-color: transparent;
+                    background-color: transparent;
+                }
+
+                .course-information {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+        
+                    p {
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                        margin: 0;
+        
+                        i {
+                            font-size: 12px;
+        
+                            &.fa-circle-play {
+                                color: #564FFD;
+                            }
+        
+                            &.fa-dollar-sign {
+                                color: #FD8E1F;
+                            }
+                        }
+        
+                        span {
+                            @include global-font;
+                            @include font-format(12px, 1.2);
+                            color:  #4E5566;
+                            letter-spacing: -0.123px;
+                        }
+                    }
+                }
+            }
+
+            .courses-purchased {
+                padding: 15px;
+
+                .payment-history {
+                    padding-left: 15px;
+
+                    @include media-breakpoint-down(lg) {
+                        padding-left: 0;
+                        padding-top: 20px;
+                        margin-top: 10px;
+                        border-top: 1px solid #F5F7FA;
+                    }
+
+                    .payment-courses-details {
+                        border: none;
+                        background-color: transparent;
+                        @include global-font;
+                        @include font-format(12px, 1.2);
+                        color: #1D2026;
+                        font-weight: 600;
+                        display: flex;
+                        align-items: flex-start;
+                        flex-direction: column;
+                        gap: 10px;
+        
+                        .course-information {
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+                
+                            p {
+                                display: flex;
+                                align-items: center;
+                                gap: 5px;
+                                margin: 0;
+                
+                                i {
+                                    font-size: 12px;
+                
+                                    &.fa-circle-play {
+                                        color: #564FFD;
+                                    }
+                
+                                    &.fa-dollar-sign {
+                                        color: #FD8E1F;
+                                    }
+                                }
+                
+                                span {
+                                    @include global-font;
+                                    @include font-format(12px, 1.2);
+                                    color:  #4E5566;
+                                    letter-spacing: -0.123px;
+                                }
+                            }
+                        }
+                    }
+
+                    .card-details {
+                        gap: 20px;
+
+                        p {
+                            margin: 0;
+                            @include global-font;
+                            @include font-format(12px, 1.2);
+                            color: #1D2026;
+                            font-weight: 400;
+                            letter-spacing: -0.128px;
+                        }
+                    }
+                }
+
+                .courses-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    padding-right: 45px;
+                    border-right: 1px solid #F5F7FA;
+
+                    @include media-breakpoint-down(lg) {
+                        padding-right: 0;
+                        border: none;
+                    }
+
+                    .course {
+                        display: flex;
+                        gap: 20px;
+
+                        @include media-breakpoint-down(xs) {
+                            flex-direction: column;
+                        }
+
+                        img {
+                            max-width: 145px;
+                            max-height: 110px;
+                            object-fit: cover;
+                        }
+
+                        .content {
+                            display: flex;
+                            gap: 15px;
+                            justify-content: space-between;
+                            flex: 1;
+
+                            .details {
+                                flex: 1;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+                                height: 100%;
+
+                                span {
+                                    display: flex;
+                                    align-items: center;
+                                    @include global-font;
+                                    @include font-format(12px, 1.2);
+                                    color:  #1D2026;
+                                    font-weight: 400;
+                                    letter-spacing: -0.128px;
+                                    margin-bottom: 5px;
+
+                                    p {
+                                        @include global-font;
+                                        @include font-format(12px, 1.2);
+                                        color:  #8C94A3;
+                                        font-weight: 400;
+                                        letter-spacing: -0.128px;
+                                        margin: 0;
+                                    }
+                                }
+
+                                .title {
+                                    @include global-font;
+                                    @include font-format(12px, 1.2);
+                                    color:  #1D2026;
+                                    font-weight: 600;
+                                    letter-spacing: -0.128px;
+                                }
+
+                                .publisher {
+                                    @include global-font;
+                                    @include font-format(12px, 1.2);
+                                    color:  #A1A5B3;
+                                    letter-spacing: -0.128px;
+                                    margin: 0;
+
+                                    strong {
+                                        color: #4E5566;
+                                    }
+                                }
+                            }
+
+                            .price {
+                                @include global-font;
+                                @include font-format(12px, 1.2);
+                                color: #FF6636;
+                                font-weight: 600;
+                                letter-spacing: -0.128px;
+                                margin: 0;
+                                display: inline-flex;
+                                align-items: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

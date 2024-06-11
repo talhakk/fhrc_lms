@@ -1,0 +1,67 @@
+{
+    "key": "group_65f99ddc86f9f",
+    "title": "Form Submission Status Field",
+    "fields": [
+        {
+            "key": "field_65f99dddfff0e",
+            "label": "Status",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_65f99e01fff0f",
+            "label": "Status Radio Buttons",
+            "name": "status_radio_buttons",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "solved": "Solved",
+                "pending": "Pending"
+            },
+            "default_value": "pending",
+            "return_format": "array",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "vertical",
+            "save_other_choice": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "form-submission"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1711401141
+}

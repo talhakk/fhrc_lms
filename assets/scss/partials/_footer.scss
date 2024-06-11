@@ -1,0 +1,97 @@
+
+footer {
+    padding: 50px 0 5px 0;
+    box-shadow: 0 3px 8px rgba(0,0,0,.24);
+    margin-top: 30px;
+
+    .footer-logos {
+        max-width: 250px;
+        width: 100%;
+        margin: 0 0 16px 0;
+    }
+
+    .carf-details {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 100%;
+        margin: 0 0 16px 0;
+        gap: 10px;
+
+        a {
+            max-width: 45px;
+            width: 100%;
+            display: flex;
+            margin-left: 5px;
+        }
+        img {
+            max-width: 45px;
+            width: 100%;
+            object-fit: contain;
+        }
+
+        p {
+            @include global-font;
+            @include font-format(12px, 1.2);
+            color: #000;
+            margin-bottom: 0;
+        }
+    }
+
+    .custom-wrapper-content {
+        h5 {
+            @include global-font;
+            @include font-format(22px, 1.2);
+            color: #191A15;
+            font-weight: 600;
+            margin-bottom: 25px;
+
+            @include media-breakpoint-down(md) {
+                margin-bottom: 15px;
+            }
+        }
+
+        li {
+            @include global-font;
+            @include font-format(14px, 1.2);
+            color: #000;
+            margin-bottom: 10px;
+        }
+    }
+
+    .footer-copyright {
+        margin-top: 80px;
+        @include media-breakpoint-down(lg) {
+            flex-direction: column-reverse;
+            gap: 10px;
+            margin-top: 40px;
+        }
+
+        p {
+            @include global-font;
+            @include font-format(12px, 1.2);
+            color: #000;
+            margin-bottom: 0;
+        }
+
+        a {
+            @include global-font;
+            @include font-format(12px, 1.2);
+            color: #000;
+            margin-bottom: 0;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            gap: 15px;
+        }
+    }
+
+    .footer-info {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}

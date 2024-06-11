@@ -1,0 +1,19 @@
+.about-us {
+    padding: 100px 0 50px 0;
+
+    @include media-breakpoint-down(lg) {
+        padding: 70px 0 50px 0;
+    }
+    @include media-breakpoint-down(md) {
+        padding: 50px 0 20px 0;
+    }
+
+    .content {
+
+        p {
+            @include media-breakpoint-down(md) {
+               font-size: 14px;
+            }
+        }
+    }
+}

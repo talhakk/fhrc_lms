@@ -1,0 +1,191 @@
+.dashboard-course-slider {
+    padding: 30px 0 50px 0;
+
+    .dashboard-h2 {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h2 {
+            @include font-format(22px, 1.2);
+            letter-spacing: -0.219px;
+        }
+
+        .swiper-btns {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            gap: 10px;
+
+            &>div {
+                position: relative;
+                width: 35px;
+                height: 35px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: $brand-primary;
+                margin: 0;
+                left: auto;
+                right: auto;
+                top: auto;
+                transition: all 0.2s ease-in-out;
+                border: 1px solid transparent;
+
+                i {
+                    font-size: 20px;
+                    color: #fff;
+                    transition: all 0.2s ease-in-out;
+                }
+
+                &::after {
+                    content: none;
+                }
+
+                &:hover {
+                    background-color: #fff;
+                    border-color: $brand-primary;
+
+                    i {
+                        color: $brand-primary;
+                        transform: scale(1.2);
+                    }
+                }
+            }
+        }
+    }
+
+    .courses-slider-wrapper {
+
+        .course-slider-card {
+            position: relative;
+            border: 0.911px solid  #E9EAF0;
+            background: #FFF;
+
+            .img {
+                max-height: 200px;
+                object-fit: cover;
+            }
+
+            .content {
+                padding: 15px;
+
+                p {
+                    @include global-font;
+                    @include font-format(12px, 1.2);
+                    color: #000;
+                    letter-spacing: -0.047px;
+                }
+
+                h3 {
+                    @include global-font;
+                    @include font-format(12px, 1.2);
+                    color: #1D2026;
+                    font-weight: 600;
+                    letter-spacing: -0.047px;
+                    text-transform: capitalize;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 1;
+                    overflow: hidden;
+                }
+            }
+
+            .cta-s {
+                border-top: 1px solid #E9EAF0;
+                padding: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 15px;
+
+                .pink-btn {
+                    flex: 1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #F4461F;
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 36.438px;
+                    /* 307.692% */
+                    letter-spacing: -0.047px;
+                    text-transform: capitalize;
+                    min-height: 35px;
+                    border: 1px solid transparent;
+                    background-color: #FFEEE8;
+                    transition: all 0.2s ease-in-out;
+
+                    &:hover {
+                        border-color: #F4461F;
+                        background-color: transparent;
+                    }
+                }
+
+                .progress-text {
+                    color: #23BD33;
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 36.438px;
+                    /* 307.692% */
+                    letter-spacing: -0.047px;
+                    text-transform: capitalize;
+                    margin: 0;
+                    display: none;
+                }
+            }
+
+            &::before {
+                content: '';
+                width: 0;
+                height: 1.5px;
+                background-color: #F4461F;
+                bottom: 0;
+                top: auto;
+                left: 0;
+                position: absolute;
+
+            }
+
+            &.playing {
+
+                .progress-text {
+                    display: flex;
+                }
+
+                &::before {
+                    width: 12%;
+                }
+
+                .cta-s {
+    
+                    .pink-btn {
+                        color: #fff;
+                        background-color: #F4461F;
+    
+                        &:hover {
+                            border-color: #F4461F;
+                            color: #F4461F;
+                            background-color: transparent;
+                        }
+                    }
+                }
+            }
+
+            &.watched {
+
+                .progress-text {
+                    display: flex;
+                }
+
+                &::before {
+                    width: 61%;
+                }
+            }
+        }
+    }
+}

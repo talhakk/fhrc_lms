@@ -1,0 +1,74 @@
+@import 'partials/_global';
+@import 'partials/_mixins';
+@import 'partials/_elements';
+@import 'partials/_header';
+@import 'partials/_footer';
+@import 'partials/_mobile-nav';
+
+// home
+@import 'partials/home-page/_home-hero';
+@import 'partials/home-page/_featured-courses';
+@import 'partials/home-page/_trainings';
+@import 'partials/home-page/_where-and-how';
+@import 'partials/home-page/_signup-cta';
+@import 'partials/home-page/_newsletter';
+
+// about-page
+@import 'partials/about-page/_about-us';
+@import 'partials/about-page/_our-team';
+
+//course-catalogue
+@import 'partials/course-catalogue/_starter-courses';
+@import 'partials/course-catalogue/_all-courses';
+@import 'partials/course-catalogue/_instructor-slider';
+@import 'partials/course-catalogue/_tutor-plugin';
+
+//course-inner
+@import 'partials/course-inner/_course-details';
+@import 'partials/course-inner/_course-inner-video';
+
+//training-calendar
+@import 'partials/training-calendar/_calendar-hero';
+@import 'partials/training-calendar/_upcoming-events';
+@import 'partials/training-calendar/_training-gallery';
+
+//instructor-inner
+@import 'partials/instructor-inner/_instructor-content';
+
+//signin-up
+@import 'partials/signin-up/_signing';
+
+//support-page
+@import 'partials/support-page/_head-back-btn';
+@import 'partials/support-page/_requests-table';
+@import 'partials/support-page/_submition-form';
+
+//help-center
+@import 'partials/help-center/_help-center';
+
+//watch-course
+@import 'partials/watch-course/_watch-course-head';
+@import 'partials/watch-course/_Leactures-details';
+
+//dashboard
+@import 'partials/dashboard/_dashboard-Nav';
+@import 'partials/dashboard/_student-dashboard-btns';
+@import 'partials/dashboard/_dashboard-course-slider';
+@import 'partials/dashboard/_wish-list-slider';
+@import 'partials/dashboard/_certificate';
+@import 'partials/dashboard/_purchase-history';
+@import 'partials/dashboard/_edit-profile';
+@import 'partials/dashboard/_enrolled-students';
+
+
+
+@import 'partials/_review-modal';
+
+//request-inner
+@import 'partials/request-inner/_request-details';
+
+
+.form-check {
+    padding-left: 0 !important;
+}
+

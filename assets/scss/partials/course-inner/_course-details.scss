@@ -1,0 +1,83 @@
+body:has(.course-details) .hero {
+    padding-bottom: 140px;
+    z-index: 1;
+}
+
+.course-details {
+    margin-top: -90px;
+    padding-bottom: 80px;
+    z-index: 3;
+    position: relative;
+
+    .inner {
+        padding: 30px;
+        border-radius: 15px;
+        background: #FFF;
+        box-shadow: 0px 5px 40px 0px rgba(16, 70, 39, 0.12);
+
+        @include media-breakpoint-down(md) {
+            padding: 20px;
+        }
+        @include media-breakpoint-down(sm) {
+            padding: 15px;
+        }
+    }
+
+    .details {
+        display: flex;
+        flex-direction: column;
+
+        .points {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 17px 47px 18px 0px;
+            border-bottom: 1px solid #D8D8D8;
+
+            span {
+            @include global-font;
+            @include font-format(16px, 1.2);
+            color: #1E1E1E;
+            font-weight: 300;
+
+            @include media-breakpoint-down(md) {
+                @include font-format(14px, 1.2);
+            }
+
+            &:has(strong) {
+                max-width: 200px;
+                width: 100% !important;
+                display: block;
+            }
+
+            strong {
+                text-transform: uppercase;
+                }
+            }
+
+            .tags {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                gap: 10px;
+
+                .tag {
+                    display: block;
+                    padding: 10px 20px;
+                    border-radius: 18px;
+                    background: #F8F8F8;
+                    box-shadow: 0px 2px 6px 0px rgba(94, 94, 94, 0.53);
+                    @include global-font;
+                    @include font-format(14px, 1.2);
+                    color: #104627;
+                    font-weight: 500;
+
+                    @include media-breakpoint-down(md) {
+                        padding: 8px 12px;
+                    }
+                }
+            }
+        }
+    }
+}

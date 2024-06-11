@@ -1,0 +1,123 @@
+.requests-table {
+
+    margin-bottom: 40px;
+    
+    .container{
+        padding: 0 59.2px;
+
+        @include media-breakpoint-down(md) {
+            padding: 0 20px;
+        }
+        @include media-breakpoint-down(sm) {
+            padding: 0 15px;
+        }
+    }
+    .input-group {
+        margin-top: 30px;
+        margin-bottom: 30px;
+
+        input {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            font-size: 16px;
+            line-height: 1.2;
+
+            &:focus {
+                box-shadow: none;
+                border-color: $brand-primary;
+            }
+        }
+
+        .btn {
+            min-height: auto;
+
+            &:active + &:focus {
+                box-shadow: none;
+            }
+        }
+    }
+
+    // .requests-table-wrapper {
+
+    //     @include media-breakpoint-down(md) {
+    //         overflow: auto;
+    //     }
+    // }
+
+    #requests-table {
+        padding: 25px;
+        border-radius: 10px;
+        border: 0.7px solid rgba(0, 0, 0, 0.60);
+        background: #FFF;
+
+        // @include media-breakpoint-down(md) {
+        //     min-width: 750px
+        // }
+
+        thead {
+
+            tr {
+                
+                th {
+                    @include global-font;
+                    @include font-format(16px, 1.2);
+                    color: #212121;
+                    font-weight: 500;
+                    border-bottom: 1.3px solid #E4FBE6;
+                    padding-bottom: 15px;
+
+                    &::before {
+                        bottom: 55%;
+                        display: none;
+                    }
+
+                    &::after {
+                        bottom: 1em;
+                        display: none;
+                    }
+                }
+            }
+        }
+        
+        tbody {
+            
+            tr{
+                
+                cursor: pointer;
+                
+                td {
+                    border-bottom: 1.3px solid #E4FBE6;
+                    padding: 1rem 0.5rem;
+                    @include global-font;
+                    @include font-format(16px, 1.2);
+                    color: #212121;
+                    font-weight: 400;
+                    letter-spacing: 0.48px;
+
+                    &.pending {
+                        font-weight: 600;
+                        color: #FBBC05;
+                    }
+
+                    &.solved {
+                        font-weight: 600;
+                        color: #1E862A;
+                    }
+                }
+
+                &:last-child {
+                 
+                    td {
+                        border: none;
+                    }
+                }
+
+                &.odd , &.even {
+                    --bs-table-accent-bg : transparent !important;
+                }
+            }
+        }
+    }
+}
+
+

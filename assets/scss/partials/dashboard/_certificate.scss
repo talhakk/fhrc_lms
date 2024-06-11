@@ -1,0 +1,234 @@
+.certificate-wrapper {
+    padding: 50px 0;
+
+    @include media-breakpoint-down(md) {
+        padding: 40px 0 50px 0;
+    }
+    
+    .head {
+
+        &.small {
+            text-align: center;
+
+            h2 {
+                text-transform: uppercase;
+
+                @include media-breakpoint-down(md) {
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+
+    .cert-container {
+        margin: 80px 0;
+
+
+        @include media-breakpoint-down(md) {
+            margin: 50px 0;
+        }
+
+        #content2 {
+            padding: 35px;
+            background: #FFF;
+            box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.25);
+            max-width: 1170px;
+            width: 100%;
+            margin: 0 auto;
+            z-index: 0;
+            position: relative;
+
+            @include media-breakpoint-down(sm) {
+                padding: 0;
+            }
+
+            @media print {
+                max-width: 1100px;
+                width: 100%;
+            }
+        }
+
+        .certificate-content {
+            position: relative;
+            padding: 35px;
+            z-index: 1;
+
+            @include media-breakpoint-down(sm) {
+                padding: 25px;
+            }
+
+
+            .corners {
+                position: absolute;
+                max-width: 115px;
+                max-height: 115px;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                @include media-breakpoint-down(sm) {
+                    max-width: 85px;
+                }
+
+                svg {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                &.c-t {
+                    top: 0;
+                    left: 0;
+                }
+
+                &.c-r {
+                    top: 0;
+                    right: 0;
+                }
+
+                &.c-l {
+                    bottom: 0;
+                    left: 0;
+                }
+
+                &.c-b {
+                    bottom: 0;
+                    right: 0;
+                }
+            }
+
+            .logo {
+                max-width: 300px;
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            h3 {
+                @include global-font;
+                @include font-format(28px, 1.2);
+                color: #C6A24D;
+                font-family: $schoolfont;
+                font-weight: 700;
+                margin: 25px 0;
+                text-align: center;
+
+                @include media-breakpoint-down(md) {
+                    @include font-format(24px, 1.2);
+                }
+
+                &.candidate {
+                    @include font-format(32px, 1.2);
+                    text-transform: uppercase;
+
+                    @include media-breakpoint-down(md) {
+                        @include font-format(26px, 1.2);
+                    }
+                }
+            }
+
+            h4 {
+                @include global-font;
+                @include font-format(20px, 1.2);
+                color: #3A3B4F;
+                font-weight: 600;
+                text-align: center;
+
+                @include media-breakpoint-down(md) {
+                    @include font-format(16px, 1.2);
+                }
+            }
+
+            p {
+                @include global-font;
+                @include font-format(14px, 1.2);
+                color: #121212;
+                text-align: center;
+                letter-spacing: 0.8px;
+
+                @include media-breakpoint-down(md) {
+                    @include font-format(12px, 1.2);
+                }
+            }
+
+            .course-title {
+                @include global-font;
+                @include font-format(30px, 1.2);
+                color: #3A3B4F;
+                font-weight: 600;
+                text-align: center;
+
+                @include media-breakpoint-down(md) {
+                    @include font-format(24px, 1.2);
+                }
+            }
+
+            .signatures {
+                max-width: 710px;
+                width: 100%;
+                margin: 125px auto 0px auto;
+
+                @include media-breakpoint-down(sm) {
+                    margin: 100px auto 0px auto;
+                }
+
+                .trainer {
+                    max-width: 300px;
+                    width: 100%;
+                    text-align: center;
+
+                    @include media-breakpoint-down(lg) {
+                        max-width: 200px;
+                    }
+
+                    @include media-breakpoint-down(sm) {
+                        max-width: 130px;
+                    }
+
+                    .signature-img {
+                        position: relative;
+                        border-bottom: 2px solid #C6A24D;
+                        margin-bottom: 15px;
+
+                        img {
+                            max-width: 80%;
+                            max-height: 120px;
+                            object-fit: contain;
+                            position: absolute;
+                            top: -110px;
+                            left: 50%;
+                            transform: translateX(-50%);
+
+                            @include media-breakpoint-down(sm) {
+                                top: -50px;
+                            }
+                        }
+                    }
+
+                    h6 {
+                        @include global-font;
+                        @include font-format(20px, 1.2);
+                        color: #C6A24D;
+                        text-transform: uppercase;
+                        @include media-breakpoint-down(md) {
+                            @include font-format(16px, 1.2);
+                        }
+                        @include media-breakpoint-down(md) {
+                            @include font-format(14px, 1.2);
+                        }
+                    }
+
+                    p {
+                        @include media-breakpoint-down(md) {
+                            @include font-format(12px, 1.2);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .btn {
+        margin: 0 auto;
+        display: block;
+    }
+}

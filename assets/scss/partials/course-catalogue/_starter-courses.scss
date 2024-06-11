@@ -1,0 +1,130 @@
+.starter-courses {
+    padding: 30px 0 50px 0;
+
+    @include media-breakpoint-down(lg) {
+        padding: 70px 0 50px 0;
+    }
+
+    @include media-breakpoint-down(md) {
+        padding: 50px 0 50px 0;
+    }
+
+    .head {
+
+        @include media-breakpoint-down(md) {
+            margin-bottom: 30px !important;
+        }
+
+        h2 {
+            text-transform: uppercase;
+        }
+    }
+
+    .nav-tabs {
+        background: rgba(255, 255, 255, 0.00);
+        box-shadow: 0px -1px 0px 0px #D1D7DC inset;
+        gap: 10px;
+
+        .nav-link {
+            border: none;
+            @include global-font;
+            color: #6A6F73;
+            font-weight: 700;
+            line-height: 19.2px;
+            text-transform: capitalize;
+            padding: 0.5rem 0.6rem;
+
+            @include media-breakpoint-down(md) {
+                font-size: 14px;
+            }
+
+            &.active {
+                border: none;
+                background-color: transparent;
+                color: #2D2F31;
+                border-bottom: 2px solid #2D2F31;
+            }
+        }
+    }
+
+    .featured-cards {
+        padding: 30px 0 0 0;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .swiper {
+            width: 100%;
+        }
+        
+        .swiper-wrapper {
+
+            margin-bottom: 20px;
+
+            .swiper-slide {
+
+                text-align: center;
+                font-size: 18px;
+                background: #fff;
+                width: fit-content;
+                /* Center slide text vertically */
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                -webkit-justify-content: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                -webkit-align-items: center;
+                align-items: center;
+            }
+        }
+
+    }
+
+    .navigation-btns {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 5px;
+        width: 100%;
+        
+        .swiper-button-prev { 
+
+            svg {
+                transform: rotate(180deg);
+            }
+        }
+
+        .swiper-button-next , .swiper-button-prev {
+            max-width: 40px;
+            width: 100%;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $brand-primary;
+            border: 1px solid #6A6F73;
+            border-radius: 50%;
+            margin-top: 0;
+            transition: all 0.2s ease-in-out;
+
+            @media screen and (max-width:767px) {
+                max-width: 35px;
+                height: 35px;
+            }
+
+            &:after {
+                content: none;
+            }
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+}

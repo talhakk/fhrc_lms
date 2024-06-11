@@ -1,0 +1,354 @@
+.upcoming-events {
+
+    .search-events-form {
+
+        .row {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin: auto;
+            background: #FFF;
+            box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.09);
+            margin-bottom: 40px;
+
+            .margin-class {
+
+                border-right: 1px solid rgba(2, 2, 2, 0.10);
+
+                .select-event-date {
+
+                    .fa-calendar-days {
+
+                        color: #104627;
+                        text-align: center;
+                        font-family: "Font Awesome 5 Free";
+                        font-size: 45px;
+                        font-style: normal;
+                        font-weight: 900;
+                        line-height: 45px;
+                        margin-bottom: 10px;
+
+                    }
+
+                    label {
+                        margin-bottom: 10px;
+                    }
+
+                }
+
+                .select-event-time {
+
+                    .fa-regular {
+                        color: #104627;
+                        text-align: center;
+                        font-family: "Font Awesome 5 Free";
+                        font-size: 45px;
+                        font-style: normal;
+                        font-weight: 900;
+                        line-height: 45px;
+                        margin-bottom: 10px;
+                    }
+
+                    label {
+                        margin-bottom: 10px;
+                    }
+                }
+
+                .select-event-state {
+
+                    .fa-solid {
+                        color: #104627;
+                        text-align: center;
+                        font-family: "Font Awesome 5 Free";
+                        font-size: 45px;
+                        font-style: normal;
+                        font-weight: 900;
+                        line-height: 45px;
+                        margin-bottom: 10px;
+                    }
+
+                    label {
+                        margin-bottom: 10px;
+                    }
+                }
+
+                .select-event-zip {
+
+                    .fa-solid {
+                        color: #104627;
+                        text-align: center;
+                        font-family: "Font Awesome 5 Free";
+                        font-size: 45px;
+                        font-style: normal;
+                        font-weight: 900;
+                        line-height: 45px;
+                        margin-bottom: 10px;
+                    }
+
+                    label {
+                        margin-bottom: 10px;
+                    }
+                }
+
+
+            }
+
+            .coloredButton {
+
+                background-color: #104627;
+
+                .select-event-button {
+
+                    cursor: pointer;
+
+                    .fa-circle-right {
+
+                        color: #fff;
+                        text-align: center;
+                        font-family: "Font Awesome 5 Free";
+                        font-size: 45px;
+                        font-style: normal;
+                        font-weight: 900;
+                        line-height: 45px;
+                        margin-bottom: 10px;
+                    }
+
+                    button {
+                        color: #fff;
+                    }
+
+                    label {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+
+
+        }
+    }
+
+    .head {
+        margin-bottom: 40px;
+
+        @include media-breakpoint-down(md) {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            text-transform: uppercase;
+        }
+    }
+
+    .events-cards , .events-cards-two , .events-cards-new{
+
+        .card {
+            border-radius: 5px;
+            background: #FFF;
+            box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.16);
+
+            img {
+                max-height: 180px;
+                object-fit: cover;
+                width: 100%;
+            }
+
+            .content {
+                padding: 15px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                height: 100%;
+
+                h3 {
+                    @include global-font;
+                    @include font-format(20px, 1.2);
+                    color: #000;
+                    font-weight: 700;
+                    margin-bottom: 8px;
+
+                    @include media-breakpoint-down(md) {
+                        @include font-format(18px, 1.2);
+                    }
+                }
+
+                p {
+                    @include global-font;
+                    @include font-format(14px, 1.2);
+                    color: #000;
+
+                    @include media-breakpoint-down(sm) {
+                        @include font-format(12px, 1.2);
+                    }
+                }
+
+                .btn {
+                    @include font-format(13px, 1.2);
+                    padding: 8px 12px;
+                    margin-left: auto;
+                    min-height: auto;
+                    margin-top: auto;
+                }
+            }
+        }
+    }
+
+    .datepicker {
+        border-radius: 5px;
+        border: 1px solid #F5F5F5;
+        background: #FFF;
+        box-shadow: 0px 4px 18.9px 0px rgba(0, 0, 0, 0.11);
+        display: flex;
+        height: 100%;
+        position: relative;
+
+        @include media-breakpoint-down(lg) {
+            margin-top: 40px;
+        }
+
+        .tribe-common {
+
+            .tribe-common-l-container {
+
+                padding-top: 40px;
+
+                .tribe-events-header {
+
+                    padding: 12px 29px;
+
+                    .tribe-events-c-view-selector {
+
+                        display: none;
+
+                    }
+                }
+
+                .tribe-events-calendar-month-mobile-events {
+                    // position: absolute;
+                    // top: 0px;
+                    // width: 100%;
+                    // left: 0;
+                    // padding: 0px 26px;
+
+                    .tribe-events-calendar-month-mobile-events__mobile-day {
+                        display: none !important;
+                    }
+
+                    .tribe-events-calendar-month-nav {
+                        border-top: none;
+                        padding: 18px 11px;
+
+                        .tribe-events-c-nav__list {
+                            padding-left: 0px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .tribe-events-calendar-month__header {
+
+            @include media-breakpoint-down(md) {
+                padding-bottom: 0;
+            }
+
+            .tribe-events-calendar-month__header-column-title-mobile {
+                color: #C4C4C4;
+                text-align: center;
+                font-family: "poppins";
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 32px;
+
+                @include media-breakpoint-down(md) {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .tribe-events-calendar-month__day {
+
+            margin: 5px;
+
+            .tribe-events-calendar-month__day-cell--selected {
+                background-color: #104627;
+
+                time {
+                    color: #FFF;
+                    text-align: center;
+                    font-family: "poppins";
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 32px;
+
+                    @include media-breakpoint-down(md) {
+                        font-size: 16px;
+                    }
+                }
+
+                .tribe-events-calendar-month__mobile-events-icon {
+                    background-color: #fff;
+                    opacity: 1;
+
+                    .tribe-common-c-svgicon {
+
+                        path {
+                            fill: #fff;
+                        }
+
+                    }
+                }
+            }
+
+            button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 8px;
+                background: #F5F5F5;
+
+                .tribe-events-calendar-month__mobile-events-icon {
+                    background-color: #104627;
+                    opacity: 1;
+
+                    .tribe-common-c-svgicon {
+
+                        path {
+                            fill: #104627;
+                        }
+
+                    }
+                }
+
+                time {
+                    color: #131A29;
+                    text-align: center;
+                    font-family: "poppins";
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 32px;
+
+                    @include media-breakpoint-down(sm) {
+                        font-size: 14px;
+                    }
+                }
+            }
+
+        }
+    }
+
+    .tribe-events {
+
+        .tribe-events-l-container {
+
+            @include media-breakpoint-down(md) {
+                padding-top: 30px;
+            }
+        }
+    }
+
+}

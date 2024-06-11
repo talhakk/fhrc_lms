@@ -1,0 +1,207 @@
+
+.training-cards {
+    padding: 90px 0;
+
+    @include media-breakpoint-down(lg) {
+        padding: 70px 0;
+    }
+
+    @include media-breakpoint-down(md) {
+        padding: 50px 0;
+    }
+
+    .head {
+        margin-bottom: 30px;
+    }
+
+    .inner {
+
+        position: relative;
+
+        .swiper-wrapper {
+
+            height: auto;
+            margin-bottom: 20px;
+
+            .swiper-slide {
+
+                height: auto;
+                text-align: center;
+                font-size: 18px;
+                background: #fff;
+                width: fit-content;
+                /* Center slide text vertically */
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                -webkit-justify-content: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                -webkit-align-items: center;
+                align-items: center;
+            }
+        }
+
+        .swiper-button-next , .swiper-button-prev {
+            max-width: 40px;
+            width: 100%;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $brand-primary;
+            border: 1px solid #6A6F73;
+            border-radius: 50%;
+            margin-top: 0;
+            transition: all 0.2s ease-in-out;
+
+            @media screen and (max-width:767px) {
+                max-width: 35px;
+                height: 35px;
+            }
+
+            &:after {
+                content: none;
+            }
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+
+        .swiper-button-prev {
+
+            svg {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .training-card {
+        border-radius: 8px;
+        background: #FFF;
+        box-shadow: 0px 1.302px 3.906px 0px rgba(0, 0, 0, 0.19);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding: 20px;
+
+        @include media-breakpoint-down(sm) {
+            padding: 15px;
+        }
+
+        .thumnail {
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            max-height: 220px;
+            min-height: 220px;
+            height: 100%;
+
+            @include media-breakpoint-down(md) {
+                min-height: 250px;
+                max-height: 250px;
+            }
+
+            img {
+                object-fit: cover;
+                object-position: top left; 
+
+                @include media-breakpoint-down(md) {
+                    min-height: 250px;
+                    max-height: 250px;
+                }
+                @include media-breakpoint-down(sm) {
+                   object-position: top left;
+                }
+            }
+        }
+
+        .content {
+            padding: 20px 0;
+
+            h3 {
+                @include global-font;
+                @include font-format(22px, 1.2);
+                color: $brand-primary;
+                font-weight: 500;
+                min-height: 53px;
+
+                @include media-breakpoint-down(md) {
+                    @include font-format(20px, 1.2);
+                }
+
+                @include media-breakpoint-down(sm) {
+                    @include font-format(18px, 1.2);
+                }
+            }
+
+            p {
+                @include global-font;
+                color: #1E1E1E;
+                font-weight: 300;
+                line-height: 1.2;
+                min-height: 100px;
+                margin: 15px 0 15px 0;
+
+                @include media-breakpoint-down(md) {
+                    @include font-format(14px, 1.2);
+                    margin: 5px 0 15px 0;
+                }
+            }
+
+            .training-btn {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                width: 100%;
+            }
+        }
+    }
+
+    .navigation-btns {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 5px;
+        width: 100%;
+
+        .swiper-button-prev { 
+
+            svg {
+                transform: rotate(180deg);
+            }
+        }
+
+        .swiper-button-next , .swiper-button-prev {
+            max-width: 40px;
+            width: 100%;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $brand-primary;
+            border: 1px solid #6A6F73;
+            border-radius: 50%;
+            margin-top: 0;
+            transition: all 0.2s ease-in-out;
+
+            @media screen and (max-width:767px) {
+                max-width: 35px;
+                height: 35px;
+            }
+
+            &:after {
+                content: none;
+            }
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+}

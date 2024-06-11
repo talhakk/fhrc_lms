@@ -1,0 +1,29 @@
+### Listing Changes by Talha ###
+### Changes in Tutor LMS Templates ###
+# 1
+Changed : tutor/dashboard.php
+NOT : tutor/dashboard/dashboard.php
+Changes : is_current_user_allowed custom function for condition used
+
+#2
+Changed : tutor/dashboard/my-courses.php
+Changes : is_current_user_allowed custom function for condition used
+
+#3 
+Changed : tutor/single-course.php
+Changes : displayed Amelia events shortcode with tag from wp_amelia_lms_integrate table
+
+#4
+Folders :
+custom_functions/lms-amelia-integration
+custom_functions/lms-dashboard
+
+Files: 
+amelia-functions.php 
+
+
+
+### Bugs ###
+custom css re-check
+frontend dashboard sidebar menu links code sync
+Hide extra options in class creation frontend

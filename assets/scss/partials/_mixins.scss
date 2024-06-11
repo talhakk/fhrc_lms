@@ -1,0 +1,165 @@
+$breakpoints-up: (
+"xs": "min-width: 480px",
+"sm": "min-width: 576px",
+"md": "min-width: 768px",
+"lg": "min-width: 992px",
+"xl": "min-width: 1200px",
+"xxl": "min-width: 1400px",
+);
+
+@mixin media-breakpoint-up($user-value) { 
+    $my-map: map-get($breakpoints-up, $user-value); 
+    @if $my-map {
+        @media (#{$my-map}) {
+            @content;
+        }
+    }
+    @else {
+        @error "Opps, seems like the breakpoint is missing ";
+    }
+}
+
+$breakpoints-down: (
+"xs": "max-width: 480.98px",
+"sm": "max-width: 575.98px",
+"md": "max-width: 767.98px",
+"lg": "max-width: 991.98px",
+"xl": "max-width: 1199.98px",
+"xxl": "max-width: 1399.98px",
+"3xl": "max-width: 1599.98px",
+"4xl": "max-width: 1799.98px",
+);
+
+@mixin media-breakpoint-down($user-value) { 
+    $my-map: map-get($breakpoints-down, $user-value); 
+    @if $my-map {
+        @media (#{$my-map}) {
+            @content;
+        }
+    }
+    @else {
+        @error "Opps, seems like the breakpoint is missing ";
+    }
+}
+
+@mixin media-breakpoint-up-custom($custom_breakpoint) {
+    @media only screen and (min-width: $custom_breakpoint) {
+        @content;
+    }
+}
+
+
+
+@mixin global-font {
+    @include font-format(16px);
+    font-family: $font-family-base;
+    color: $body-color;
+}
+
+@mixin font-format($size, $lh: 1.5) {
+    font-size: $size;
+    line-height: $lh;
+}
+
+@mixin heading {
+    font-family: $headings-font-family;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: $fw-bold;
+}
+
+@mixin h1 {
+    @include heading;
+    @include font-format(35px);
+
+    @include media-breakpoint-up(md) {
+        @include font-format(48px);
+    }
+    @include media-breakpoint-up(lg) {
+        @include font-format(60px);
+    }
+    @include media-breakpoint-up(xl) {
+        @include font-format(85px);
+    }
+}
+
+@mixin h2 {
+    @include heading;
+    @include font-format(40px);
+}
+
+@mixin h3 {
+    @include heading;
+    @include font-format(32px);
+}
+
+@mixin h4 {
+    @include heading;
+    @include font-format(20px);
+}
+
+@mixin h5 {
+    @include heading;
+    @include font-format(18px);
+}
+
+@mixin h6 {
+    @include heading;
+    @include font-format(16px);
+}
+
+@mixin transition-standard {
+    transition: all .4s ease-out;
+    transition-timing-function: cubic-bezier(0.400,0.000,0.200,1.000);
+}
+
+
+
+@mixin btn {
+    @include transition-standard;
+    @include font-format(14px);
+    min-height: 42px;
+    font-family: $font-family-base;
+    font-weight: $fw-semi-bold;
+    font-size: 12px;
+    color: #fff;
+    text-transform: capitalize;
+    background-color: $brand-primary;
+    padding: 5px 15px;
+    box-sizing: border-box;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 5px;
+
+    @include media-breakpoint-up-custom(992px) {
+        padding: 5px 30px;
+        @include font-format(14px);
+    }
+
+    &:hover,
+    &:focus {
+        color: #fff;
+        background-color: $btn-hover;
+        outline: none;
+        box-shadow: none;
+    }
+}
+
+@mixin cover-overlay ($color: "#000" , $opacity: "0.5") {
+    position: relative;
+
+    &:after {
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color, $opacity);
+    }
+}

@@ -1,0 +1,54 @@
+.head-back-btn {
+    padding: 60px 0 0 0;
+
+    @include media-breakpoint-down(md) {
+        padding: 40px 0 0 0;
+    }
+
+    .head {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        @include media-breakpoint-down(md) {
+            flex-direction: column;
+        }
+
+        i {
+            font-size: 25px;
+            margin-top: 4px;
+        }
+
+        .onclick-arrow-wrap {
+
+            display: flex;
+            gap: 25px;
+            align-items: center;
+
+            a {
+
+                i {
+                    color: $brand-primary;
+                    font-size: 34px;
+                    transition: all 0.2s ease-in-out;
+                }
+
+                &:hover {
+
+                    i {
+                        transform: scale(1.2);
+                    }
+                }
+            }
+        }
+
+
+        p {
+
+            a {
+                color: $brand-primary;
+                text-decoration: underline;
+            }
+        }
+    }
+}

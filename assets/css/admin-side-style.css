@@ -1,0 +1,13 @@
+
+  .wp-submenu.wp-submenu-wrap li .tutor-addons-text {
+  	display: none !important;
+  }
+
+  .login h1 a {
+    background-image: none, url(../images/Brand-NameHeader.svg);
+    background-size: 300px !important;
+    width: 300px !important;
+  }
+  .tutor-google-meet-form-controls .tutor-row {
+  	display: none !important;
+  }
